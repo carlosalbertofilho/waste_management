@@ -66,3 +66,6 @@ RUN cd opt && git clone --depth=1 https://github.com/oatpp/oatpp-postgresql && \
 RUN id -u vscode &>/dev/null || (useradd -m vscode && echo "vscode:vscode" | chpasswd && adduser vscode sudo)
 USER vscode
 WORKDIR /workspace
+
+RUN git config --global user.email "carlosalberto_filho@outlook.com" && \
+    git config --global user.name "carlosalbertofilho"
