@@ -1,5 +1,5 @@
 # Usa imagem oficial de C++ com Debian
-FROM mcr.microsoft.com/devcontainers/cpp:debian
+FROM mcr.microsoft.com/devcontainers/cpp:1-debian-12
 
 # Instala dependências para o Bazelisk e o Bazel
 RUN apt-get update && apt-get install -y --no-install-recommends \
