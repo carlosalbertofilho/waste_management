@@ -1,48 +1,37 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-  "name": "Waste Management C++ Dev",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": "."
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-        "C_Cpp.default.intelliSenseEngine": "Tag Parser",
-        "C_Cpp.errorSquiggles": "enabled",
-        "C_Cpp.autocomplete": "default",
-        "C_Cpp.suggestSnippets": true,
-        "C_Cpp.suggestSelection": "first",
-        "C_Cpp.formatting": "clangFormat",
-        "C_Cpp.clang_format_fallbackStyle": "file"
-      },
-      "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools",
-        "ms-vscode.cmake-tools-helper",
-        "bazelbuild.vscode-bazel",
-        "ms-vscode.cmake-tools",
-        "ms-azuretools.vscode-docker"
-      ]
-    }
-  },
-  "mounts": [
-    "source=devcontainer-postgres-data,target=/var/lib/postgresql/data,type=volume",
-    "source=devcontainer-redis-data,target=/data,type=volume"
-  ],
-  "runArgs": [
-    "--cap-add=SYS_PTRACE",
-    "--security-opt",
-    "seccomp=unconfined",
-    "--privileged"
-  ],
-  "containerEnv": {
-    "POSTGRES_USER": "admin",
-    "POSTGRES_PASSWORD": "admin",
-    "POSTGRES_DB": "waste_management"
-  },
-  //"postCreateCommand": "bazel build //...",
-  "forwardPorts": [8000, 8443, 5432, 6379],
-  "remoteUser": "vscode"
+	"name": "C/C++ Bazel",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"vadimcn.vscode-lldb",
+				"cheshirekow.cmake-format"
+			]
+		},
+		"settings": {
+  			"lldb.adapterType": "native"
+		}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }

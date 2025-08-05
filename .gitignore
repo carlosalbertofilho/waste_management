@@ -1,0 +1,55 @@
+# Diretórios e arquivos do Bazel
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+bazel-workspace/
+bazel-*/
+
+# Diretórios externos
+external/
+
+# Arquivos de lock e cache
+**/.cache/
+**/*.lock
+
+# Arquivos de build temporários
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.libs
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.d
+
+# Arquivos de debug
+*.gcno
+*.gcda
+*.gcov
+
+# Arquivos de log
+*.log
+
+# Arquivos do sistema/IDE
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+cmake-build-*/
+
+# Testes temporários
+test-temp/
+test-results/
+
+# Outros específicos
+.env
